@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: draaf-backend
+    env: node
+    region: ohio
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: FRONTEND_URL
+        value: https://draaf-estetica.vercel.app # Reemplaza con tu URL real de Vercel
+      - key: MONGODB_URI
+        sync: false # Llena este valor en el dashboard de Render
+      - key: JWT_SECRET
+        sync: false # Llena este valor en el dashboard de Render (usa scripts/generar-env.sh)
+      - key: WHATSAPP_API_URL
+        value: https://graph.facebook.com/v19.0
+      - key: WHATSAPP_APP_SECRET
+        sync: false
+      - key: WHATSAPP_VERIFY_TOKEN
+        sync: false
