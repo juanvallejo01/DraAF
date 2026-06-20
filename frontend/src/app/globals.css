@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --color-dorado: #D4AF37;
+  --color-dorado-oscuro: #B8962E;
+  --color-fondo: #FAFAFA;
+  --color-texto: #333333;
+  --fuente: var(--font-poppins), system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente);
+  background-color: #FAFAFA;
+  color: #333333;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 60px,
+    rgba(212, 175, 55, 0.04) 60px,
+    rgba(212, 175, 55, 0.04) 61px
+  ),
+  repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 60px,
+    rgba(212, 175, 55, 0.02) 60px,
+    rgba(212, 175, 55, 0.02) 61px
+  );
+  background-attachment: fixed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: rgba(212, 175, 55, 0.2);
+  color: #333333;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.35);
+  border-radius: 3px;
+}
+
+/* Animación modal */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animar-fade { animation: fadeIn 0.2s ease; }
+.animar-slide { animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
