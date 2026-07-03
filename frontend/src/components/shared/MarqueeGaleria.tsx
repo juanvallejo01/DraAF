@@ -39,10 +39,12 @@ const Fila = ({ invertir = false }: { invertir?: boolean }) => {
           >
             <Image
               src={`/${img}`}
-              alt={`Resultado ${(i % IMAGENES.length) + 1}`}
+              alt={`Galería de resultados medicina estética — Dra. Ana Faber Cali`}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="220px"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
             <div className="absolute inset-[2px] rounded-xl border border-[#D4AF37]/0 group-hover:border-[#D4AF37]/35 transition-colors duration-500" />
@@ -92,11 +94,13 @@ export const MarqueeGaleria = () => (
         >
           <Image
             src="/certificadopro.jpeg"
-            alt="Certificado profesional Dra. Ana Cristina Faber"
+            alt="Certificado de formación internacional en medicina estética — Dra. Ana Cristina Faber, especialista en Cali Colombia"
             width={1972}
             height={1408}
             className="w-full h-auto"
             sizes="(max-width: 1024px) 90vw, 45vw"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>

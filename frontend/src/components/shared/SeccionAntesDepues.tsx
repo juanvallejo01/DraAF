@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
 const CASOS = [
-  { src: '/antes1.jpeg', w: 1442, h: 1600, label: 'Tratamiento facial' },
-  { src: '/antes2.jpeg', w: 1600, h: 1600, label: 'Perfilamiento de labios' },
-  { src: '/antes3.jpeg', w: 1600, h: 1214, label: 'Tratamiento corporal' },
-  { src: '/antes4.jpeg', w: 1600, h: 1334, label: 'Renovación cutánea' },
+  { src: '/antes1.jpeg', w: 1442, h: 1600, label: 'Tratamiento facial', alt: 'Antes y después tratamiento facial — Dra. Ana Cristina Faber, medicina estética Cali' },
+  { src: '/antes2.jpeg', w: 1600, h: 1600, label: 'Perfilamiento de labios', alt: 'Antes y después perfilamiento de labios con ácido hialurónico — Dra. Ana Faber Cali' },
+  { src: '/antes3.jpeg', w: 1600, h: 1214, label: 'Tratamiento corporal', alt: 'Antes y después tratamiento corporal estético — Dra. Ana Cristina Faber Cali' },
+  { src: '/antes4.jpeg', w: 1600, h: 1334, label: 'Renovación cutánea', alt: 'Antes y después renovación cutánea y rejuvenecimiento facial — Dra. Ana Faber Cali' },
 ];
 
 export const SeccionAntesDepues = () => (
@@ -26,7 +26,7 @@ export const SeccionAntesDepues = () => (
 
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {CASOS.map(({ src, w, h, label }) => (
+        {CASOS.map(({ src, w, h, label, alt }) => (
           <div
             key={src}
             className="group relative overflow-hidden rounded-2xl"
@@ -34,11 +34,13 @@ export const SeccionAntesDepues = () => (
           >
             <Image
               src={src}
-              alt={label}
+              alt={alt}
               width={w}
               height={h}
               className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               sizes="(max-width: 640px) 100vw, 50vw"
+              loading="lazy"
+              decoding="async"
             />
             {/* Overlay inferior */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-5 py-4 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">

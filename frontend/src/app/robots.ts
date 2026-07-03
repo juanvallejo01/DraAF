@@ -1,14 +1,22 @@
 import { MetadataRoute } from 'next';
 
-export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
 
+export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/admin/', '/paciente/'],
-    },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    rules: [
+      {
+        userAgent: '*',
+        allow: ['/', '/inicio', '/tratamientos'],
+        disallow: ['/admin/', '/admin/*', '/paciente/', '/paciente/*', '/auth/', '/auth/*'],
+      },
+      {
+        userAgent: 'Googlebot',
+        allow: ['/', '/inicio', '/tratamientos'],
+        disallow: ['/admin/', '/paciente/', '/auth/'],
+      },
+    ],
+    sitemap: `${BASE_URL}/sitemap.xml`,
+    host: BASE_URL,
   };
 }

@@ -10,6 +10,56 @@ import type { RespuestaAPI } from '@/types';
 import { api } from '@/lib/api';
 import { TRATAMIENTOS_ESTATICOS, CATEGORIAS } from '@/data/tratamientos';
 
+const SCHEMA_ORG = {
+  '@context': 'https://schema.org',
+  '@type': ['MedicalBusiness', 'LocalBusiness'],
+  name: 'Dra. Ana Cristina Faber — Medicina Estética y Antiaging',
+  alternateName: 'Dra. AF Medicina Estética Cali',
+  description:
+    'Clínica de medicina estética y antiaging en Cali, Colombia. Especializados en botox, ácido hialurónico, armonización facial, bioestimuladores de colágeno, peeling químico, depilación láser y rejuvenecimiento facial.',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://draaf.vercel.app',
+  telephone: '+573164827229',
+  priceRange: '$$',
+  image: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://draaf.vercel.app'}/README.jpeg`,
+  logo: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://draaf.vercel.app'}/logo%20ana_Mesa%20de%20trabajo%201.PNG`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Cl. 5 #45-20',
+    addressLocality: 'Cali',
+    addressRegion: 'Valle del Cauca',
+    postalCode: '760001',
+    addressCountry: 'CO',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 3.4423,
+    longitude: -76.5399,
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Cali',
+    sameAs: 'https://www.wikidata.org/wiki/Q39984',
+  },
+  sameAs: ['https://www.instagram.com/dra.ana.faber/'],
+  medicalSpecialty: 'Estetica',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Tratamientos Estéticos',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Armonización Facial' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Botox / Toxina Botulínica' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Ácido Hialurónico' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Relleno y perfilamiento de labios' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bioestimuladores de colágeno' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Plasma rico en plaquetas (PRP)' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Peeling químico' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Depilación Láser 4D Vellux' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Rinomodelación' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Rejuvenecimiento Facial' } },
+    ],
+  },
+};
+
 const CREDENCIALES = [
   'Médica especialista en Medicina Estética y Antiaging',
   'Experta en técnicas no invasivas de rejuvenecimiento facial',
@@ -35,8 +85,18 @@ export default function PaginaInicio() {
   return (
     <div className="min-h-screen">
 
+      {/* JSON-LD Schema.org */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA_ORG) }}
+      />
+
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#FAFAFA] via-white to-[#F7F3ED]">
+        {/* H1 visible solo para buscadores — no afecta el diseño */}
+        <h1 className="sr-only">
+          Dra. Ana Cristina Faber — Medicina Estética y Antiaging en Cali, Colombia. Botox, ácido hialurónico, armonización facial y bioestimuladores.
+        </h1>
 
         {/* Círculos — solo visible en pantallas medianas+ */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(700px,90vw)] h-[min(700px,90vw)] rounded-full border border-[#D4AF37]/8 pointer-events-none hidden sm:block" />
