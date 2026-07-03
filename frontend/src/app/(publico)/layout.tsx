@@ -1,33 +1,35 @@
 import type { Metadata } from 'next';
 import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
+import { BotonFlotanteWA } from '@/components/shared/BotonFlotanteWA';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Dra. AF | Medicina Estética',
-    template: '%s | Dra. AF',
+    default: 'Dra. Ana Cristina Faber | Medicina Estética y Antiaging',
+    template: '%s | Dra. Ana Cristina Faber',
   },
   description:
-    'Clínica de medicina estética de alta gama. Tratamientos faciales con los más altos estándares médicos: ácido hialurónico, toxina botulínica, bioestimulación y más. Reserva tu cita en minutos.',
+    'Dra. Ana Cristina Faber — especialista en medicina estética y antiaging en Cali, Colombia. Tratamientos faciales de vanguardia: ácido hialurónico, toxina botulínica, bioestimulación y más.',
   keywords: [
-    'medicina estética',
-    'tratamientos faciales',
+    'medicina estética Cali',
+    'antiaging Cali',
+    'Dra Ana Cristina Faber',
+    'tratamientos faciales Cali',
     'ácido hialurónico',
-    'botox',
+    'botox Cali',
     'bioestimulación',
-    'mesoterapia',
-    'peeling químico',
-    'hilos tensores',
+    'rejuvenecimiento facial',
   ],
-  authors: [{ name: 'Dra. AF' }],
-  creator: 'Dra. AF',
+  authors: [{ name: 'Dra. Ana Cristina Faber' }],
+  creator: 'Dra. Ana Cristina Faber',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   openGraph: {
     type: 'website',
     locale: 'es_CO',
-    siteName: 'Dra. AF | Medicina Estética',
-    title: 'Dra. AF | Medicina Estética de Alta Gama',
+    siteName: 'Dra. Ana Cristina Faber | Medicina Estética',
+    title: 'Dra. Ana Cristina Faber | Medicina Estética y Antiaging — Cali',
     description:
-      'Tratamientos estéticos de vanguardia con los más altos estándares de seguridad y exclusividad. Reserva tu cita en minutos.',
+      'Tratamientos estéticos de vanguardia con los más altos estándares de seguridad y exclusividad en Cali, Colombia.',
   },
   robots: {
     index: true,
@@ -40,13 +42,8 @@ export default function LayoutPublico({ children }: { children: React.ReactNode 
     <>
       <Navbar />
       <main className="pt-16">{children}</main>
-      <footer className="border-t border-gray-100 py-8 mt-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Dra. AF · Medicina Estética de Alta Gama
-          </p>
-        </div>
-      </footer>
+      <Footer />
+      <BotonFlotanteWA />
     </>
   );
 }

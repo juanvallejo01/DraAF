@@ -68,3 +68,35 @@ html {
 
 .animar-fade { animation: fadeIn 0.2s ease; }
 .animar-slide { animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* Infinite marquee horizontal */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Infinite marquee izquierda a derecha */
+@keyframes marquee-ltr {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.marquee-ltr-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 28s linear infinite;
+}
+
+.marquee-ltr-track:hover {
+  animation-play-state: paused;
+}
