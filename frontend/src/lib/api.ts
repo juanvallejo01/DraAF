@@ -57,6 +57,14 @@ export const api = {
     });
   },
 
+  put<T>(ruta: string, cuerpo: unknown, autenticado = true) {
+    return this.solicitar<T>(ruta, {
+      method: 'PUT',
+      body: JSON.stringify(cuerpo),
+      autenticado,
+    });
+  },
+
   patch<T>(ruta: string, cuerpo: unknown, autenticado = true) {
     return this.solicitar<T>(ruta, {
       method: 'PATCH',
