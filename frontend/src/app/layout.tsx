@@ -27,14 +27,7 @@ export const metadata: Metadata = {
   description:
     'Medicina estética y antiaging en Cali. Botox, ácido hialurónico, armonización facial y bioestimuladores. Dra. Ana Cristina Faber.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
-      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
-    shortcut: '/favicon.ico',
-  },
+  // Los íconos los generan automáticamente icon.tsx y apple-icon.tsx
 };
 
 export default function LayoutRaiz({ children }: { children: React.ReactNode }) {
