@@ -244,6 +244,33 @@ export default function PaginaInicio() {
       {/* ── Galería Marquee ── */}
       <MarqueeGaleria />
 
+      {/* ── Facilidades de pago ── */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+          <span className="inline-block text-[#D4AF37] text-xs font-semibold tracking-[0.35em] uppercase mb-5 bg-[#D4AF37]/8 px-4 py-2 rounded-full">
+            Facilidades de pago
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-light text-[#333333] mb-5 leading-tight">
+            Financia tu <span className="text-[#D4AF37] font-semibold">tratamiento</span>
+          </h2>
+          <p className="text-gray-500 text-sm sm:text-base font-light leading-relaxed max-w-2xl mx-auto mb-10">
+            Disponemos de opciones de financiación con Sistecrédito, Welli y Meddipay.
+            Consulta con nuestro equipo las condiciones y elige la alternativa que mejor
+            se adapte a tus necesidades.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {['Sistecrédito', 'Welli', 'Meddipay'].map((entidad) => (
+              <div
+                key={entidad}
+                className="bg-[#FAFAFA] border border-gray-100 rounded-2xl px-8 py-5 text-sm font-medium text-[#333333] hover:border-[#D4AF37]/30 hover:shadow-sm transition-all duration-300"
+              >
+                {entidad}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Contacto ── */}
       <section id="contacto" className="grid grid-cols-1 lg:grid-cols-2">
 

@@ -9,6 +9,10 @@ const ICONOS: Record<string, string> = {
   'Rejuvenecimiento': '◈',
   'Corporal & Láser': '◉',
   'Especialidad': '◇',
+  'Capilar': '❋',
+  'Glúteos': '◆',
+  'Vaginal': '❁',
+  'Faloplastia': '⬢',
 };
 
 export default function PaginaTratamientos() {
