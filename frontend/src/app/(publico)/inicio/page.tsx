@@ -258,13 +258,28 @@ export default function PaginaInicio() {
             Consulta con nuestro equipo las condiciones y elige la alternativa que mejor
             se adapte a tus necesidades.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {['Sistecrédito', 'Welli', 'Meddipay'].map((entidad) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 max-w-xs sm:max-w-none mx-auto">
+            {[
+              { nombre: 'Sistecrédito', src: '/sistecredito.jpeg' },
+              { nombre: 'Welli', src: '/welli.jpeg' },
+              { nombre: 'Meddipay', src: '/meddipay.jpeg' },
+            ].map((entidad) => (
               <div
-                key={entidad}
-                className="bg-[#FAFAFA] border border-gray-100 rounded-2xl px-8 py-5 text-sm font-medium text-[#333333] hover:border-[#D4AF37]/30 hover:shadow-sm transition-all duration-300"
+                key={entidad.nombre}
+                className="group bg-white border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center justify-center gap-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:border-[#D4AF37]/30 transition-all duration-300"
               >
-                {entidad}
+                <div className="relative w-full h-12 sm:h-14">
+                  <Image
+                    src={entidad.src}
+                    alt={entidad.nombre}
+                    fill
+                    className="object-contain transition-transform duration-300 group-hover:scale-105"
+                    sizes="200px"
+                  />
+                </div>
+                <span className="text-[11px] text-gray-400 group-hover:text-[#D4AF37]/70 font-medium tracking-widest uppercase transition-colors duration-300">
+                  {entidad.nombre}
+                </span>
               </div>
             ))}
           </div>
