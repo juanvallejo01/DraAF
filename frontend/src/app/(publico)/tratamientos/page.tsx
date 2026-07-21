@@ -13,6 +13,7 @@ const ICONOS: Record<string, string> = {
   'Glúteos': '◆',
   'Vaginal': '❁',
   'Faloplastia': '⬢',
+  'Manejo de peso': '⬡',
 };
 
 export default function PaginaTratamientos() {

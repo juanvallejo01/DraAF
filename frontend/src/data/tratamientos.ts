@@ -13,6 +13,7 @@ export const CATEGORIAS = [
   'Glúteos',
   'Vaginal',
   'Faloplastia',
+  'Manejo de peso',
 ] as const;
 
 export const TRATAMIENTOS_ESTATICOS: TratamientoEstatico[] = [
@@ -71,4 +72,9 @@ export const TRATAMIENTOS_ESTATICOS: TratamientoEstatico[] = [
 
   // Faloplastia
   { nombre: 'Engrosamiento de pene con ácido hialurónico', categoria: 'Faloplastia' },
+
+  // Manejo de peso
+  { nombre: 'Péptidos', categoria: 'Manejo de peso' },
+  { nombre: 'Enzimas corporales', categoria: 'Manejo de peso' },
+  { nombre: 'Tenxamas', categoria: 'Manejo de peso' },
 ];
