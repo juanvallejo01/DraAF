@@ -254,15 +254,16 @@ export default function PaginaInicio() {
             Financia tu <span className="text-[#D4AF37] font-semibold">tratamiento</span>
           </h2>
           <p className="text-gray-500 text-sm sm:text-base font-light leading-relaxed max-w-2xl mx-auto mb-10">
-            Disponemos de opciones de financiación con Sistecrédito, Welli y Meddipay.
+            Disponemos de opciones de financiación con Sistecrédito, Welli, Meddipay y Addi.
             Consulta con nuestro equipo las condiciones y elige la alternativa que mejor
             se adapte a tus necesidades.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 max-w-xs sm:max-w-none mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6 max-w-md sm:max-w-none mx-auto">
             {[
               { nombre: 'Sistecrédito', src: '/sistecredito.jpeg' },
               { nombre: 'Welli', src: '/welli.jpeg' },
               { nombre: 'Meddipay', src: '/meddipay.jpeg' },
+              { nombre: 'Addi', src: '/Addi.jpeg' },
             ].map((entidad) => (
               <div
                 key={entidad.nombre}
